@@ -33,7 +33,6 @@ GoogleContactsNoauth.prototype.getContacts = function (callback) {
   var req = https.request(this.httpOptions, function(res) {
 
     var output = '';
-    console.log(this.httpOptions.host + ':' + res.statusCode);
     res.setEncoding('utf8');
 
     res.on('data', function (chunk) {
@@ -42,15 +41,12 @@ GoogleContactsNoauth.prototype.getContacts = function (callback) {
 
     res.on('end', function() {
         var obj = JSON.parse(output);
-        console.log(res.statusCode);
-        console.log(obj.feed.entry);
         callback(null, obj.feed.entry);
     });
 
   });
 
   req.on('error', function(err) {
-      console.log('error:', err.message);
       callback(err);
   });
 
