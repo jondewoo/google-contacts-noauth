@@ -1,6 +1,6 @@
 {
   "name": "google-contacts-noauth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A node module for querying the Google Contacts API using an existing access token.",
   "homepage": "https://github.com/jderrough/google-contacts-noauth",
   "author": {
